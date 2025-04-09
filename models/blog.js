@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import User from "./user.js";
 const blogSchema= new mongoose.Schema({
   title:{
     type:String,
@@ -13,7 +14,7 @@ const blogSchema= new mongoose.Schema({
   },
   user:{
     type:mongoose.Types.ObjectId,
-    ref:user
+    ref:User
   }
   
 },{timestamps:true}); 
