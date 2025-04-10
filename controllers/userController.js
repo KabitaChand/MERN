@@ -114,7 +114,7 @@ export const getAllUsers=async(req,res)=>{
 };
 export const logoutUser = (req, res) => {
   try {
-      // Clear the token cookie
+      // Clear the token from cookie
       res.clearCookie('token', {
           httpOnly: true,
           secure: process.env.NODE_ENV === 'production',
