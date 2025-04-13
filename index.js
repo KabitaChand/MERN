@@ -5,6 +5,7 @@ import connectdb from "./config/db.js";
 import userRoutes from "./routes/userRoutes.js";
 import cookieParser from "cookie-parser";
 import blogRoutes from "./routes/blogRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
 
 dotenv.config();
 const app= express();
@@ -16,6 +17,7 @@ app.use(cookieParser());
 //routes
 app.use('/api',userRoutes);
 app.use('/api',blogRoutes);
+app.use('/api/auth',authRoutes);
 
 
 app.use('/api',(req,res)=>{

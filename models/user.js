@@ -15,7 +15,15 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: false
-  }
+  },
+  role:{
+  type:String,
+  enum:["user","admin","friends"],
+  default:"user",
+  },
+  refreshToken:{
+    type:String
+  },
 });
 
 const User = mongoose.model("User", userSchema); // Define model
