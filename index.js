@@ -10,7 +10,10 @@ import authRoutes from "./routes/authRoutes.js";
 dotenv.config();
 const app= express();
 connectdb();  //connects mongodb
-app.use(cors());
+app.use(cors({
+  origin: "http://localhost:5173", // or your frontend origin
+  credentials: true,              // ✅ this enables cookies to be sent
+}));
 app.use(express.json());
 app.use(cookieParser());
 
